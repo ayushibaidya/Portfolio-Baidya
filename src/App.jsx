@@ -3,9 +3,9 @@ import AnimatedBackground from "./components/AnimatedBackground.jsx";
 import Home from "./sections/Home.jsx";
 import About from "./sections/About.jsx";
 import Academics from "./sections/Academics.jsx";
-import Projects from "./sections/About.jsx";
-import Contact from "./sections/About.jsx";
 import WorkExperience from "./sections/WorkExperience.jsx";
+import Projects from "./sections/Projects.jsx";
+import Contact from "./sections/Contact.jsx";
 
 function App() {
   return (
