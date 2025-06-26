@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
-  scroll-behavior: smooth;
+html, body {
+  height: 100%;
+  overflow: hidden;
 }
 
+main {
+  scroll-snap-type: y mandatory;
+}

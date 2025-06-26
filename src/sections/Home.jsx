@@ -4,7 +4,7 @@ export default function Home() {
     return (
       <section
         id="home"
-        className="h-screen flex items-center justify-center relative overflow-hidden"
+        className="h-screen flex items-center justify-center relative overflow-hidden snap-start snap-always"
       >
         {/* Center content */}
         <div className="text-center z-10">

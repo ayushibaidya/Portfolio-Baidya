@@ -2,11 +2,15 @@ export default function About() {
     return (
       <section
         id="about"
-        className="min-h-screen flex flex-col items-center justify-center px-6 py-20 relative z-10"
+        className="min-h-screen flex flex-col items-center justify-center px-6 py-20 relative z-10 snap-start snap-always"
       >
         <h2 className="text-4xl font-bold mb-6 text-center text-licorice">About Me</h2>
         <p className="max-w-3xl text-lg leading-relaxed text-center text-licorice">
-          I'm Ayushi, a passionate learner and aspiring software developer. I love working on web applications, particularly with the MERN stack, and I’m always seeking to improve my skills and contribute to meaningful projects.
+          I’m an aspiring software developer with a strong foundation in Computer Science. I graduated with a B.Tech in Computer Science and Engineering from NIT Jamshedpur, and have since worked for 1.5 years at Adobe Systems India Pvt. Ltd. as a Salesforce Support Analyst, where I gained experience in CRM platforms and automation.
+        </p>
+        <br />
+        <p className="max-w-3xl text-lg leading-relaxed text-center text-licorice">
+          I will be pursuing my Master’s in Computer Science at Northeastern University starting Fall 2025. Currently, I’m focused on expanding my skills in full stack development, Python, Java, and exploring modern technologies to build impactful and scalable applications.
         </p>
 <br />
 <br />
