@@ -26,9 +26,9 @@ export default function Home() {
               />
             </svg>
           </div>
-          <h1 className="text-3xl mt-8 font-bold text-licorice">Hi, I'm Ayushi 👋</h1>
+          <h1 className="text-3xl mt-8 font-bold text-licorice">Hi, I'm Ayushi Baidya👋</h1>
           <TypingText
-  texts={["Full Stack Developer", "MERN Stack Enthusiast"]}
+  texts={["Software Engineering", "Backend/Systems"]}
   typingSpeed={100}
   deletingSpeed={70}
   pause={1500}

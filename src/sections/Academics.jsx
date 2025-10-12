@@ -6,7 +6,7 @@ export default function Academics() {
     >
       <h2 className="text-4xl font-bold mb-12 text-center max-w-3xl w-full">Academics</h2>
 
-      <div className="max-w-4xl w-full p-8 rounded-xl shadow-lg border">
+       <div className="max-w-4xl w-full p-8 rounded-xl shadow-lg border">
         {/* NEU (Upcoming MS) */}
         <div className="mb-20 flex flex-col md:flex-row items-center md:items-start relative">
           <div className="w-20 h-20 rounded-full bg-white p-3 z-10 border-2 border-roseHover shadow-md flex items-center justify-center flex-shrink-0">
@@ -17,7 +17,7 @@ export default function Academics() {
             <p className="text-lg italic text-gray-600">MS in Computer Science</p>
             <p className="text-sm text-gray-500 mb-2">2025 – 2027 • Khoury College of Computer Sciences</p>
             <p className="text-sm italic text-gray-600">
-              Relevant Coursework: Programming Design Paradigm, Computer Systems
+              Relevant Coursework: Program Design Paradigms (Java), Computer Systems (C)
             </p>
           </div>
         </div>
@@ -32,7 +32,7 @@ export default function Academics() {
             <p className="text-lg italic text-gray-600">Bachelor of Technology in Computer Science and Engineering</p>
             <p className="text-sm italic text-gray-500 mb-2">2019 – 2023 | CGPA: <span className="text-roseHover">7.82</span></p>
             <p className="text-sm italic text-gray-600 mb-4">
-              Relevant Coursework: Compiler Design (10/10), Database Management System (9/10), Computer Graphics (9/10), Operating System (8/10), Design and Analysis of Algorithms (8/10), Object Oriented System Design (8/10), Digital System Design (8/10), Theory of Computation (8/10), Discrete Structures (8/10), Engineering Mathematics III (9/10)
+              Relevant Coursework: Operating System, Compiler Design, Database Management System, Computer Graphics, Design and Analysis of Algorithms, Object Oriented System Design, Digital System Design, Theory of Computation
             </p>
           </div>
         </div>
