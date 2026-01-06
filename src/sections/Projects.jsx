@@ -183,6 +183,55 @@ export default function Projects() {
             ))}
           </div>
         </article>
+
+        {/* Project 5: Calendar*/}
+        <article className="p-6 rounded-xl shadow-lg border bg-white">
+          <h3 className="text-2xl font-semibold">
+            Virtual Calendar Application (CS5010)
+          </h3>
+          <p className="mt-2 text-sm text-gray-500">
+            Systems • Java (JDK 11), MVC, Swing
+          </p>
+          <ul className="mt-4 list-disc list-inside space-y-2 text-gray-700">
+            <li>
+              Built the Controller + View layers of an MVC calendar system: a robust command parser + command objects for interactive/headless CLI modes, plus a Java Swing GUI (month grid + day view) with dialogs for creating/editing single and recurring events, calendar switching, and user-friendly validation/error messaging.
+            </li>
+            <li>
+              Delivered end-to-end features across iterations: multi-calendar + per-calendar timezones, recurring series + scoped edits (instance vs series), copy events across calendars with timezone conversion, and export to CSV + iCal (.ical/.ics); validated behavior with JUnit 4 tests (Gradle build), plus coverage tooling (JaCoCo) and quality gates (Checkstyle).
+            </li>
+          </ul>
+          <div className="mt-4 flex flex-wrap gap-2">
+  {[
+    "Java",
+    "JDK 11",
+    "MVC",
+    "Swing",
+    "GUI",
+    "CLI",
+    "headless mode",
+    "command parser",
+    "Command pattern",
+    "multi-calendar",,
+    "recurring events",
+    "event series edits",
+    "copy events",
+    "timezone conversion",
+    "CSV export",
+    "iCal/ICS export",
+    "Gradle",
+    "JUnit 4",
+    "JaCoCo",
+    "Checkstyle",
+  ].map((t) => (
+    <span
+      key={t}
+      className="px-3 py-1 rounded bg-gray-100 text-gray-800 text-sm border"
+    >
+      {t}
+    </span>
+  ))}
+</div>
+        </article>
       </div>
     </section>
   );

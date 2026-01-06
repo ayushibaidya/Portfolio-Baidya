@@ -15,9 +15,10 @@ export default function Academics() {
           <div className="md:ml-8 text-center md:text-left mt-4 md:mt-0 w-full">
             <h3 className="text-2xl font-semibold">Northeastern University, Boston</h3>
             <p className="text-lg italic text-gray-600">MS in Computer Science</p>
-            <p className="text-sm text-gray-500 mb-2">2025 – 2027 • Khoury College of Computer Sciences</p>
+            <p className="text-sm text-gray-500 mb-2">Khoury College of Computer Sciences</p>
+            <p className="text-sm italic text-gray-500 mb-2">2025 – 2027 | CGPA: <span className="text-roseHover">3.8</span></p>
             <p className="text-sm italic text-gray-600">
-              Relevant Coursework: Program Design Paradigms (Java), Computer Systems (C)
+              Relevant Coursework: Program Design Paradigms (Java), Computer Systems (C), Algorithms, Operating Systems Implementation (OSI)
             </p>
           </div>
         </div>
