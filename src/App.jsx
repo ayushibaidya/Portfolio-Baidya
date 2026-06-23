@@ -5,6 +5,7 @@ import About from "./sections/About.jsx";
 import Academics from "./sections/Academics.jsx";
 import WorkExperience from "./sections/WorkExperience.jsx";
 import Projects from "./sections/Projects.jsx";
+import AcademicCoursework from "./sections/AcademicCoursework.jsx";
 import Contact from "./sections/Contact.jsx";
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
     <>
       <Navbar />
       <AnimatedBackground /> 
-      <main className="snap-y snap-mandatory h-screen overflow-y-scroll scroll-smooth">
+      <main className="relative z-10 snap-y snap-mandatory h-screen overflow-y-scroll scroll-smooth">
         <section className="min-h-screen snap-start">
           <Home />
         </section>
@@ -27,6 +28,9 @@ function App() {
         </section>
         <section className="min-h-screen snap-start">
           <Projects />
+        </section>
+        <section className="min-h-screen snap-start">
+          <AcademicCoursework />
         </section>
         <section className="min-h-screen snap-start">
           <Contact />

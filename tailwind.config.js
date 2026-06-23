@@ -11,7 +11,12 @@ module.exports = {
       },
       colors: {
         licorice: "#241715",
-        roseHover: "#703D57",
+        roseHover: "#A63A50",
+        cherryRose: "#A63A50",
+        antiqueWhite: "#F0E7D8",
+        taupe: "#AB9B96",
+        cinnamonWood: "#A1674A",
+        dustyRose: "#BA6E6E",
       },
       keyframes: {
         blob: {

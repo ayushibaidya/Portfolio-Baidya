@@ -1,238 +1,153 @@
+const projects = [
+  {
+    title: "ShelfLife",
+    subtitle: "Backend Service / Full-Stack Integration",
+    category: "Full Stack",
+    status: "Featured",
+    summary:
+      "Built a Go/Gin service for authenticated settings, web push subscriptions, and real-time notifications in a React/Supabase freshness app.",
+    bullets: [
+      "Secured versioned API handlers with Supabase JWT validation, per-user Postgres query scoping, and pgx/v5 pooling.",
+      "Registered browser and device push subscriptions with idempotent PostgreSQL upserts using ON CONFLICT DO UPDATE.",
+      "Delivered real-time notification confirmations through an RWMutex-guarded WebSocket hub with per-user routing.",
+      "Automated AWS EC2 deployment with GitHub Actions, Go binary builds, and systemd-managed backend restarts.",
+    ],
+    tech: [
+      "Go",
+      "Gin",
+      "PostgreSQL",
+      "Supabase",
+      "JWT",
+      "pgx/v5",
+      "REST APIs",
+      "WebSockets",
+      "AWS EC2",
+      "GitHub Actions",
+    ],
+    badgeClass: "bg-dustyRose/20 text-cherryRose border-dustyRose/40",
+  },
+  {
+    title: "EGOS-2K Operating Systems Labs",
+    subtitle: "RISC-V OS Labs / QEMU Simulation",
+    category: "Systems",
+    status: "Course Project",
+    summary:
+      "Implemented core components in EGOS-2K, a small RISC-V educational OS, using C and QEMU-based simulation.",
+    bullets: [
+      "Built round-robin and MLFQ schedulers with aging, priority promotion, starvation checks, and wait-time fairness metrics.",
+      "Added scheduling metrics for turnaround time, response time, CPU runtime, wait time, boost count, and starvation hits.",
+      "Implemented user-level threads, context switching, cooperative scheduling primitives, and IPC message passing.",
+      "Worked on syscalls, user/kernel protection, RISC-V PMP, virtual memory layout, inode operations, disk storage, and QEMU debugging.",
+    ],
+    tech: [
+      "C",
+      "RISC-V",
+      "QEMU",
+      "MLFQ",
+      "syscalls",
+      "PMP",
+      "IPC",
+      "virtual memory",
+      "file system",
+      "scheduling metrics",
+    ],
+    badgeClass: "bg-cinnamonWood/15 text-cinnamonWood border-cinnamonWood/35",
+  },
+  {
+    title: "RTOS-Based Motion-Control Firmware Simulator",
+    subtitle: "C Firmware Simulator / FreeRTOS-Ready Architecture",
+    category: "Embedded",
+    status: "In Progress",
+    summary:
+      "Built a modular embedded C firmware simulator for a 2-axis motion stage, designed to migrate into FreeRTOS tasks on ARM Cortex-M.",
+    bullets: [
+      "Built modular C firmware for command parsing, motion control, telemetry reporting, and fault handling.",
+      "Added UART-style commands including PING, STATUS, MOVE, STOP, ESTOP, and CLEAR_FAULT.",
+      "Simulated X/Y motion with milli-millimeter units, feedrate updates, bounds checking, motion states, and e-stop safety.",
+      "Validated behavior with CMake, CTest, and a Python smoke test for boot, commands, telemetry, faults, and recovery.",
+    ],
+    tech: [
+      "C",
+      "CMake",
+      "CTest",
+      "Python",
+      "Embedded Systems",
+      "FreeRTOS-ready",
+      "ARM Cortex-M",
+      "UART commands",
+      "motion control",
+      "fault recovery",
+    ],
+    badgeClass: "bg-taupe/25 text-licorice border-taupe/45",
+  },
+]
+
 export default function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-screen flex flex-col items-center justify-center px-6 py-20 text-licorice relative z-10 snap-start snap-always"
+      className="min-h-screen flex flex-col items-center justify-center px-6 py-24 text-licorice relative z-10 snap-start snap-always"
     >
-      <h2 className="text-4xl font-bold mb-12 text-center">Projects</h2>
+      <h2 className="text-4xl font-bold mb-4 text-center">Projects</h2>
+      <p className="max-w-2xl text-center text-gray-700 mb-10">
+        Featured technical projects aligned with backend, systems, and embedded-adjacent software.
+      </p>
 
-      {/* 2 by 2 grid holding 4 cards */}
-      <div className="max-w-5xl w-full grid gap-8 md:grid-cols-2">
-        {/* Project 1: Mini Checkpointing System */}
-        <article className="p-6 rounded-xl shadow-lg border bg-white">
-          <h3 className="text-2xl font-semibold">
-            Mini Checkpointing System — Checkpoint–Restart (CS5600)
-          </h3>
-          <p className="mt-2 text-sm text-gray-500">Systems • C, Linux</p>
-          <ul className="mt-4 list-disc list-inside space-y-2 text-gray-700">
-            <li>
-              Implemented Linux user-space checkpointing in C: captured{" "}
-              <code>ucontext_t</code> (<code>getcontext</code>), parsed{" "}
-              <code>/proc/self/maps</code>, and serialized segments with
-              page-aligned boundaries and integrity checks; measured image size
-              vs. page size and I/O throughput.
-            </li>
-            <li>
-              Wrote a static restart that <code>mmap</code>s with{" "}
-              <code>MAP_FIXED</code> and resumes via <code>setcontext()</code>;
-              handled guard pages and <code>vdso/vvar</code> relocation; verified
-              restore sequence with GDB/<code>perf</code>.
-            </li>
-          </ul>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {[
-              "C",
-              "Linux",
-              "mmap",
-              "signals",
-              "ucontext",
-              "/proc/self/maps",
-              "GDB",
-              "perf",
-              "Makefile",
-            ].map((t) => (
+      <div className="max-w-6xl w-full grid gap-6 lg:grid-cols-3">
+        {projects.map((project) => (
+          <article
+            key={project.title}
+            className="bg-antiqueWhite/90 border border-taupe/45 rounded-2xl shadow-lg p-6 backdrop-blur flex flex-col"
+          >
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <h3 className="text-2xl font-semibold">{project.title}</h3>
+                <p className="mt-1 text-sm italic text-gray-600">
+                  {project.subtitle}
+                </p>
+              </div>
+
               <span
-                key={t}
-                className="px-3 py-1 rounded bg-gray-100 text-gray-800 text-sm border"
+                className={`${project.badgeClass} px-3 py-1 rounded-full border text-sm font-medium whitespace-nowrap`}
               >
-                {t}
+                {project.category}
               </span>
-            ))}
-          </div>
-        </article>
+            </div>
 
-        {/* Project 2: 3650 CPU Emulator */}
-        <article className="p-6 rounded-xl shadow-lg border bg-white">
-          <h3 className="text-2xl font-semibold">3650 CPU Emulator (CS3650)</h3>
-          <p className="mt-2 text-sm text-gray-500">
-            Systems • C, Emulator Design
-          </p>
-          <ul className="mt-4 list-disc list-inside space-y-2 text-gray-700">
-            <li>
-              Implemented the instruction set in <code>emulate.c</code> with a
-              fetch–decode–execute loop, register/memory model, condition flags,
-              and <code>HALT</code>; coded opcode semantics per the CPU spec.
-            </li>
-            <li>
-              Authored tests in <code>test.c</code> for LOAD/STORE, ALU ops,
-              control flow, and stack; generated binaries via{" "}
-              <code>asm.py -l</code>, validated with{" "}
-              <code>runsim -v/-r</code> and <code>disasm</code>; automated builds
-              with Makefile.
-            </li>
-          </ul>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {[
-              "C",
-              "bitwise ops",
-              "fetch/decode/execute",
-              "asm.py",
-              "disasm",
-              "runsim",
-              "Makefile",
-              "Git",
-            ].map((t) => (
-              <span
-                key={t}
-                className="px-3 py-1 rounded bg-gray-100 text-gray-800 text-sm border"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
-        </article>
+            <p className="mt-4 text-sm leading-relaxed text-gray-700">
+              {project.summary}
+            </p>
 
-        {/* Project 3: User-Space Thread Library */}
-        <article className="p-6 rounded-xl shadow-lg border bg-white">
-          <h3 className="text-2xl font-semibold">
-            User-Space Thread Library (CS5600)
-          </h3>
-          <p className="mt-2 text-sm text-gray-500">
-            Systems • C, User-level Threads
-          </p>
-          <ul className="mt-4 list-disc list-inside space-y-2 text-gray-700">
-            <li>
-              Implemented a pthread-like user-space threading library (
-              <code>qthread</code>) with thread create/join, yield, sleep,
-              mutexes, and condition variables using custom TCBs plus ready/sleep
-              queues; wrote C tests to validate synchronization and
-              join-before-exit semantics.
-            </li>
-            <li>
-              Integrated architecture-specific context switching in{" "}
-              <code>switch_sp</code> and built a cooperative scheduler handling
-              runnable threads and timer-based wakeups via{" "}
-              <code>gettimeofday()</code>, ensuring fair progress across multiple
-              worker threads.
-            </li>
-          </ul>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {[
-              "C",
-              "user-level threads",
-              "context switch",
-              "scheduler",
-              "mutexes",
-              "cond vars",
-              "TCB",
-              "queues",
-              "timers",
-              "Makefile",
-            ].map((t) => (
-              <span
-                key={t}
-                className="px-3 py-1 rounded bg-gray-100 text-gray-800 text-sm border"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
-        </article>
+            <ul className="mt-5 space-y-3 text-sm text-licorice/80 flex-1">
+              {project.bullets.map((bullet) => (
+                <li key={bullet} className="flex gap-3 leading-relaxed">
+                  <span
+                    className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-cinnamonWood"
+                    aria-hidden="true"
+                  />
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
 
-        {/* Project 4: ShelfLife Backend */}
-        <article className="p-6 rounded-xl shadow-lg border bg-white">
-          <h3 className="text-2xl font-semibold">
-            ShelfLife — Produce Freshness Tracker (Backend)
-          </h3>
-          <p className="mt-2 text-sm text-gray-500">
-            Backend • Go, Supabase/Postgres
-          </p>
-          <ul className="mt-4 list-disc list-inside space-y-2 text-gray-700">
-            <li>
-              Built a Go backend (Gin) with REST APIs for user settings and push
-              device registration; enforced per-user data isolation using
-              Supabase/Postgres RLS and JWT auth, with versioned{" "}
-              <code>/v1</code> routes and env-driven configuration.
-            </li>
-            <li>
-              Made the subscription endpoint idempotent to prevent duplicate
-              registrations; tested end-to-end using <code>curl</code> and SQL,
-              and standardized DB connectivity with <code>pgxpool</code> and a
-              hardened proxy setup.
-            </li>
-          </ul>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {[
-              "Go",
-              "Gin",
-              "pgx/pgxpool",
-              "PostgreSQL",
-              "Supabase",
-              "RLS",
-              "JWT",
-              "REST APIs",
-              "Web Push",
-              "curl",
-            ].map((t) => (
-              <span
-                key={t}
-                className="px-3 py-1 rounded bg-gray-100 text-gray-800 text-sm border"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
-        </article>
-
-        {/* Project 5: Calendar*/}
-        <article className="p-6 rounded-xl shadow-lg border bg-white">
-          <h3 className="text-2xl font-semibold">
-            Virtual Calendar Application (CS5010)
-          </h3>
-          <p className="mt-2 text-sm text-gray-500">
-            Systems • Java (JDK 11), MVC, Swing
-          </p>
-          <ul className="mt-4 list-disc list-inside space-y-2 text-gray-700">
-            <li>
-              Built the Controller + View layers of an MVC calendar system: a robust command parser + command objects for interactive/headless CLI modes, plus a Java Swing GUI (month grid + day view) with dialogs for creating/editing single and recurring events, calendar switching, and user-friendly validation/error messaging.
-            </li>
-            <li>
-              Delivered end-to-end features across iterations: multi-calendar + per-calendar timezones, recurring series + scoped edits (instance vs series), copy events across calendars with timezone conversion, and export to CSV + iCal (.ical/.ics); validated behavior with JUnit 4 tests (Gradle build), plus coverage tooling (JaCoCo) and quality gates (Checkstyle).
-            </li>
-          </ul>
-          <div className="mt-4 flex flex-wrap gap-2">
-  {[
-    "Java",
-    "JDK 11",
-    "MVC",
-    "Swing",
-    "GUI",
-    "CLI",
-    "headless mode",
-    "command parser",
-    "Command pattern",
-    "multi-calendar",,
-    "recurring events",
-    "event series edits",
-    "copy events",
-    "timezone conversion",
-    "CSV export",
-    "iCal/ICS export",
-    "Gradle",
-    "JUnit 4",
-    "JaCoCo",
-    "Checkstyle",
-  ].map((t) => (
-    <span
-      key={t}
-      className="px-3 py-1 rounded bg-gray-100 text-gray-800 text-sm border"
-    >
-      {t}
-    </span>
-  ))}
-</div>
-        </article>
+            <div className="mt-5">
+              <p className="text-sm font-semibold text-licorice mb-3">
+                {project.status}
+              </p>
+              <ul className="flex flex-wrap gap-2">
+                {project.tech.map((tech) => (
+                  <li
+                    key={tech}
+                    className="px-3 py-1 rounded-full bg-white/55 text-licorice text-sm border border-taupe/40"
+                  >
+                    {tech}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
-  );
+  )
 }
