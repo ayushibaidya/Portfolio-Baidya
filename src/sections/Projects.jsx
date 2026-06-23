@@ -79,8 +79,78 @@ const projects = [
       "fault recovery",
     ],
     badgeClass: "bg-taupe/25 text-licorice border-taupe/45",
+    hasRobo: true,
   },
 ]
+
+function ProjectRobo() {
+  return (
+    <>
+      <svg
+        className="mini-robo-route"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <path d="M74 22 L52 30 L76 42 L40 55 L66 68 L33 76 L30 46 L74 22" />
+      </svg>
+      <div className="mini-robo-waddler" aria-hidden="true">
+        <div className="mini-robo-shadow" />
+        <svg
+          className="mini-robo"
+          viewBox="0 0 34 34"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="8"
+            y="10"
+            width="18"
+            height="14"
+            rx="5"
+            fill="#A1674A"
+            fillOpacity="0.18"
+            stroke="#A1674A"
+            strokeWidth="1.8"
+          />
+          <path d="M17 10V6" stroke="#A1674A" strokeWidth="1.8" strokeLinecap="round" />
+          <circle cx="17" cy="5.5" r="1.8" fill="#A1674A" />
+          <circle cx="14" cy="16" r="1.4" fill="#A1674A" />
+          <circle cx="20" cy="16" r="1.4" fill="#A1674A" />
+          <path d="M13 20H21" stroke="#A1674A" strokeWidth="1.8" strokeLinecap="round" />
+          <path
+            className="mini-robo-arm-left"
+            d="M8 16H5.5"
+            stroke="#A1674A"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          />
+          <path
+            className="mini-robo-arm-right"
+            d="M26 16H28.5"
+            stroke="#A1674A"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          />
+          <path
+            className="mini-robo-leg-left"
+            d="M14 24V29"
+            stroke="#A1674A"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          />
+          <path
+            className="mini-robo-leg-right"
+            d="M20 24V29"
+            stroke="#A1674A"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          />
+        </svg>
+      </div>
+    </>
+  )
+}
 
 export default function Projects() {
   return (
@@ -97,8 +167,10 @@ export default function Projects() {
         {projects.map((project) => (
           <article
             key={project.title}
-            className="bg-antiqueWhite/90 border border-taupe/45 rounded-2xl shadow-lg p-6 backdrop-blur flex flex-col"
+            className="relative overflow-hidden bg-antiqueWhite/90 border border-taupe/45 rounded-2xl shadow-lg p-6 backdrop-blur flex flex-col"
           >
+            {project.hasRobo && <ProjectRobo />}
+
             <div className="flex items-start justify-between gap-3">
               <div>
                 <h3 className="text-2xl font-semibold">{project.title}</h3>

@@ -10,3 +10,145 @@ html, body {
 main {
   scroll-snap-type: y mandatory;
 }
+
+.mini-robo-route {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.mini-robo-route path {
+  fill: none;
+  stroke: rgba(161, 103, 74, 0.22);
+  stroke-width: 0.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 2.5 3.5;
+}
+
+.mini-robo-waddler {
+  position: absolute;
+  top: 22%;
+  left: 74%;
+  z-index: 20;
+  width: 31px;
+  height: 36px;
+  pointer-events: none;
+  animation: mini-robo-wander 23s steps(18, end) infinite;
+}
+
+.mini-robo {
+  position: absolute;
+  z-index: 2;
+  width: 31px;
+  height: 31px;
+  opacity: 0.78;
+  filter: drop-shadow(0 6px 7px rgba(36, 23, 21, 0.1));
+  animation: mini-robo-body-waddle 0.42s ease-in-out infinite alternate;
+}
+
+.mini-robo-shadow {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  z-index: 1;
+  width: 20px;
+  height: 5px;
+  border-radius: 9999px;
+  background: rgba(161, 103, 74, 0.18);
+  filter: blur(1px);
+  transform: translateX(-50%);
+  animation: mini-robo-shadow-step 0.42s ease-in-out infinite alternate;
+}
+
+.mini-robo-arm-left,
+.mini-robo-leg-right {
+  animation: mini-robo-step-a 0.42s ease-in-out infinite alternate;
+}
+
+.mini-robo-arm-right,
+.mini-robo-leg-left {
+  animation: mini-robo-step-b 0.42s ease-in-out infinite alternate;
+}
+
+@keyframes mini-robo-wander {
+  0% {
+    top: 22%;
+    left: 74%;
+    transform: translate(-50%, -50%) rotate(-5deg) scaleX(1);
+  }
+  14% {
+    top: 30%;
+    left: 52%;
+    transform: translate(-50%, -50%) rotate(5deg) scaleX(-1);
+  }
+  28% {
+    top: 42%;
+    left: 76%;
+    transform: translate(-50%, -50%) rotate(-4deg) scaleX(1);
+  }
+  42% {
+    top: 55%;
+    left: 40%;
+    transform: translate(-50%, -50%) rotate(6deg) scaleX(-1);
+  }
+  56% {
+    top: 68%;
+    left: 66%;
+    transform: translate(-50%, -50%) rotate(-5deg) scaleX(1);
+  }
+  70% {
+    top: 76%;
+    left: 33%;
+    transform: translate(-50%, -50%) rotate(4deg) scaleX(-1);
+  }
+  84% {
+    top: 46%;
+    left: 30%;
+    transform: translate(-50%, -50%) rotate(-4deg) scaleX(1);
+  }
+  100% {
+    top: 22%;
+    left: 74%;
+    transform: translate(-50%, -50%) rotate(-5deg) scaleX(1);
+  }
+}
+
+@keyframes mini-robo-body-waddle {
+  from {
+    transform: translateY(0) rotate(-2deg);
+  }
+  to {
+    transform: translateY(2px) rotate(2deg);
+  }
+}
+
+@keyframes mini-robo-shadow-step {
+  from {
+    opacity: 0.12;
+    transform: translateX(-50%) scaleX(0.82);
+  }
+  to {
+    opacity: 0.24;
+    transform: translateX(-50%) scaleX(1.08);
+  }
+}
+
+@keyframes mini-robo-step-a {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(1.8px);
+  }
+}
+
+@keyframes mini-robo-step-b {
+  from {
+    transform: translateY(1.8px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
