@@ -1,5 +1,5 @@
 // tailwind.config.js
-module.exports = {
+export default {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}", // make sure this includes your React files
   ],

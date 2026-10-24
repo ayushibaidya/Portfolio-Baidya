@@ -1,40 +1,75 @@
-import TypingText from "../components/TypingEffect.jsx";
+import Icon from "../components/Icon.jsx";
+import { profile } from "../data/portfolio.js";
 
 export default function Home() {
-    return (
-      <section
-        id="home"
-        className="h-screen flex items-center justify-center relative overflow-hidden snap-start snap-always"
-      >
-        {/* Center content */}
-        <div className="text-center z-10">
-          <div className="w-80 h-80 mx-auto relative overflow-hidden">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full animate-morph">
-              <clipPath id="blobClip">
-                <path
-                  fill="#000000"
-                  d="M40.5,-56.7C52.2,-48.3,61.7,-34.6,64.1,-20.5C66.5,-6.3,61.8,8.2,56,22.2C50.2,36.3,43.2,49.9,31.7,58.6C20.3,67.3,4.4,71.1,-10.5,71C-25.4,71,-39.4,66.9,-50.1,57.5C-60.8,48.1,-68.2,33.4,-70.5,18.5C-72.8,3.5,-69.9,-11.6,-63,-24.5C-56.2,-37.3,-45.4,-48,-32.5,-56.8C-19.6,-65.5,-4.8,-72.2,9.2,-73.2C23.1,-74.3,46.2,-69.1,40.5,-56.7Z"
-                  transform="translate(100 100)"
-                />
-              </clipPath>
-              <image
-                href="/portfolio-picture.jpeg"
-                width="100%"
-                height="100%"
-                clipPath="url(#blobClip)"
-                preserveAspectRatio="xMidYMid slice"
-              />
-            </svg>
+  return (
+    <section id="home" className="hero container" aria-labelledby="hero-title">
+      <div className="hero-topline">
+        <p className="availability">
+          <span />
+          {profile.availability}
+        </p>
+        <span className="mono hero-index">PORTFOLIO / 2027</span>
+      </div>
+      <p className="eyebrow hero-eyebrow">
+        Ayushi Baidya · Software Engineer · MS Computer Science
+      </p>
+      <h1 id="hero-title">
+        Building reliable software,
+        <br /> <span>from backend services to distributed systems.</span>
+      </h1>
+      <div className="hero-bottom">
+        <div className="hero-intro">
+          <p>
+            I’m Ayushi, a Computer Science master’s student at Northeastern
+            University graduating in <strong>May 2027</strong>. I build backend
+            services, full-stack applications, and software systems using Java,
+            Python, Go, TypeScript, PostgreSQL, and AWS.
+          </p>
+          <div className="hero-actions">
+            <a className="button button-primary" href="#projects">
+              Explore Projects <Icon name="arrow" />
+            </a>
+            <a className="button button-secondary" href="#contact">
+              Contact Me <Icon name="arrow" />
+            </a>
           </div>
-          <h1 className="text-3xl mt-8 font-bold text-licorice">Hi, I'm Ayushi Baidya👋</h1>
-          <TypingText
-  texts={["Software Engineering", "Backend/Systems"]}
-  typingSpeed={100}
-  deletingSpeed={70}
-  pause={1500}
-/>
         </div>
-      </section>
-    );
-  }
-  
+        <div className="hero-profile">
+          <div className="profile-rule" />
+          <dl>
+            <div>
+              <dt>Based in</dt>
+              <dd>Boston, MA</dd>
+            </div>
+            <div>
+              <dt>Graduating</dt>
+              <dd>
+                May 2027 <span>· Northeastern</span>
+              </dd>
+            </div>
+          </dl>
+          <div className="social-links">
+            <a href={profile.github} target="_blank" rel="noreferrer">
+              <Icon name="github" />
+              View GitHub <span className="sr-only">(opens in a new tab)</span>
+              <Icon name="external" />
+            </a>
+            <a href={profile.linkedin} target="_blank" rel="noreferrer">
+              <Icon name="linkedin" />
+              Connect on LinkedIn{" "}
+              <span className="sr-only">(opens in a new tab)</span>
+              <Icon name="external" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="hero-foot">
+        <span className="mono">BACKEND · FULL-STACK · SYSTEMS</span>
+        <a href="#projects">
+          Explore selected work <span aria-hidden="true">↓</span>
+        </a>
+      </div>
+    </section>
+  );
+}

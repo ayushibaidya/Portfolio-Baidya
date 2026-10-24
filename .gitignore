@@ -22,3 +22,23 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Private reference material must never be committed or served.
+private/
+.private/
+private-reference/
+*[Rr][Ee][Ss][Uu][Mm][Ee]*
+*[Rr][Éé][Ss][Uu][Mm][Éé]*
+[Cc][Vv].*
+[Cc][Vv]-*
+[Cc][Vv]_*
+*[_-][Cc][Vv].*
+*[_-][Cc][Vv][_-]*
+*.[Pp][Dd][Ff]
+*.[Tt][Ee][Xx]
+*.[Ll][Aa][Tt][Ee][Xx]
+*.[Ll][Tt][Xx]
+*.[Dd][Oo][Cc]
+*.[Dd][Oo][Cc][Xx]
+*.[Oo][Dd][Tt]
+*.[Rr][Tt][Ff]
